@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .brand-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .brand {
+      font-weight: bold;
+      font-size: 24px;
+      color: #0066cc;
+    }
+
+    .stock {
+      background-color: #ff4444;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .product-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .rating {
+      color: #FFD700;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .features {
+      list-style-type: none;
+    }
+
+    .features li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .features li:before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      color: #0066cc;
+    }
+
+    .size-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+
+    .size-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .price-section {
+      margin-top: 20px;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: bold;
+      color: #0066cc;
+      margin-bottom: 15px;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .quantity-btn {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quantity-input {
+      width: 60px;
+      height: 30px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-buy {
+      background-color: #ff4444;
+      color: white;
+    }
+
+    .btn-cart {
+      background-color: #0066cc;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 1024px) {
+      .product-card {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .product-card {
+        padding: 15px;
+      }
+
+      .brand {
+        font-size: 20px;
+      }
+
+      .product-title {
+        font-size: 18px;
+      }
+
+      .price {
+        font-size: 22px;
+      }
+
+      .quantity-controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="product-card">
+      <div class="brand-header">
+        <span class="brand">LG</span>
+        <span class="stock">Only <span id="stock-count">2</span> in Stock</span>
+      </div>
+
+      <div class="product-title">
+        LG C2 42 (106CM) 4K SMART OLED EVO TV | WEBOS | CINEMA HDR
+      </div>
+
+      <div class="rating">★★★★★</div>
+
+      <ul class="features">
+        <li>a9 Gens AI Processor with AI Picture Pro & AI 4K Upscaling</li>
+        <li>Pixel Dimming, Perfect Black, 100% Color Fidelity & Color Volume</li>
+        <li>Hands-free Voice Control, Always Ready</li>
+        <li>Dolby Vision IQ with Precision Detail, Dolby Atmos, Filmmaker Mode</li>
+        <li>Eye Comfort Display: Low-Blue Light, Flicker-Free</li>
+      </ul>
+
+      <table class="size-table">
+        <tr>
+          <td>106 cm (42")</td>
+          <td>121 cm (48")</td>
+          <td>139 cm (55")</td>
+        </tr>
+        <tr>
+          <td>164 cm (65")</td>
+          <td>196 cm (77")</td>
+          <td>210 cm (83")</td>
+        </tr>
+      </table>
+
+      <div class="price-section">
+        <div class="price">USD: $<span id="unit-price">600.72</span></div>
+        <div class="total-price">Total: $<span id="total-price">600.72</span></div>
+
+        <div class="quantity-controls">
+          <button class="quantity-btn" id="decrease-qty">-</button>
+          <input type="number" class="quantity-input" id="quantity" value="1" min="1" />
+          <button class="quantity-btn" id="increase-qty">+</button>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-buy">Buy Now</button>
+          <button class="btn btn-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const quantityInput = document.getElementById('quantity');
+      const decreaseBtn = document.getElementById('decrease-qty');
+      const increaseBtn = document.getElementById('increase-qty');
+      const unitPriceElement = document.getElementById('unit-price');
+      const totalPriceElement = document.getElementById('total-price');
+      const stockCountElement = document.getElementById('stock-count');
+
+      const unitPrice = 600.72;
+      let stockCount = 2;
+
+      function updateTotalPrice() {
+        const quantity = parseInt(quantityInput.value);
+        const totalPrice = (unitPrice * quantity).toFixed(2);
+        totalPriceElement.textContent = totalPrice;
+
+        if (quantity > stockCount) {
+          stockCountElement.textContent = '0';
+          stockCountElement.parentElement.style.backgroundColor = '#ff0000';
+        } else {
+          const remainingStock = stockCount - quantity;
+          stockCountElement.textContent = remainingStock;
+          stockCountElement.parentElement.style.backgroundColor =
+            remainingStock < 3 ? '#ff4444' : '#4CAF50';
+        }
+      }
+
+      decreaseBtn.addEventListener('click', function () {
+        let currentValue = parseInt(quantityInput.value);
+        if (currentValue > 1) {
+          quantityInput.value = currentValue - 1;
+          updateTotalPrice();
+        }
+      });
+
+      increaseBtn.addEventListener('click', function () {
+        let currentValue = parseInt(quantityInput.value);
+        quantityInput.value = currentValue + 1;
+        updateTotalPrice();
+      });
+
+      quantityInput.addEventListener('input', function () {
+        let value = parseInt(this.value);
+        if (isNaN(value) || value < 1) {
+          this.value = 1;
+        }
+        updateTotalPrice();
+      });
+
+      updateTotalPrice();
+    });
+  </script>
+</body>
+</html>
